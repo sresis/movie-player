@@ -2,6 +2,12 @@
 import logo from './logo.svg';
 import './App.css';
 import Filter from './Filter';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 import React, {useState} from 'react';
@@ -31,17 +37,22 @@ function App() {
       <header className="App-header">
         Movie Player
       </header>
+
         <div>
-          <Filter />
-        </div>
         <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <>
-        <GlobalStyles />
-        <button onClick={toggleTheme}>{theme} mode</button>
-        <footer>
-        </footer>
-      </>
-    </ThemeProvider>
+          <>
+            <GlobalStyles />
+            <button onClick={toggleTheme}>{theme} mode</button>
+            <footer>
+            </footer>
+          </>
+        </ThemeProvider>
+          <Filter />
+          <iframe width="420" height="315" title="movie" src="https://www.youtube.com/embed/re5veV2F7eY">
+          </iframe>
+          
+        </div>
+       
     
 
         

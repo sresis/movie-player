@@ -4,6 +4,17 @@ import React, {useState} from 'react';
 import {Card, } from 'react-bootstrap';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import showVideo from './showVideo';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    Redirect,
+    useHistory
+  } from "react-router-dom";
+
+
 
 const responsive = {
     superLargeDesktop: {
@@ -30,7 +41,7 @@ export default function Filter() {
     const titles = []
     // copy of list to store list before sorting
     var movieList = [...movieData]
-
+    const history = useHistory();
     const showMovies = (evt) => {
         evt.preventDefault();
         for (const movie of movieList) {
@@ -42,6 +53,7 @@ export default function Filter() {
                         <Card.Title>{movie.Title}</Card.Title>
                         <Card.Text>
                         Year: {movie.Year}
+                        <button onClick={()=>window.location.href="/showVideo"}>Show Video</button>
                         </Card.Text>
                     </Card.Body>
                     </Card>
@@ -52,12 +64,24 @@ export default function Filter() {
     }
     
     return (
-        <div>
+        <React.Fragment>
+            <Router>
+				<Switch>
+				<Route path="/showVideo" component={showVideo}>
+					<showVideo />
+				</Route>
+                </Switch>
+            </Router>
+
+
+            <div>
             <button onClick={showMovies}>xx</button>
             <Carousel responsive={responsive}>
                 {movieNames}
             </Carousel>
         </div>
+        </React.Fragment>
+        
     )
 
 }

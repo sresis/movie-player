@@ -19,5 +19,8 @@ export const movieData = [
     {Title:"The Devil Wears Prada",Year:"2006","imdbID":"tt0458352",Type:"movie",
     Poster:"https://m.media-amazon.com/images/M/MV5BZjQ3ZTIzOTItMGNjNC00MWRmLWJlMGEtMjJmMDM5ZDIzZGM3XkEyXkFqcGdeQXVyMTkzODUwNzk@._V1_SX300.jpg"},
     {Title:"Mean Girls",Year:"2004","imdbID":"tt0377092",Type:"movie",
-    Poster:"https://m.media-amazon.com/images/M/MV5BMjE1MDQ4MjI1OV5BMl5BanBnXkFtZTcwNzcwODAzMw@@._V1_SX300.jpg"}
+    Poster:"https://m.media-amazon.com/images/M/MV5BMjE1MDQ4MjI1OV5BMl5BanBnXkFtZTcwNzcwODAzMw@@._V1_SX300.jpg"},
+    {Title:"The Great Gatsby",Year:"2013","imdbID":"tt1343092",Type:"movie",Poster:"https://m.media-amazon.com/images/M/MV5BMTkxNTk1ODcxNl5BMl5BanBnXkFtZTcwMDI1OTMzOQ@@._V1_SX300.jpg"},
+    {Title:"Crazy, Stupid, Love.",Year:"2011",imdbID:"tt1570728",Type:"movie",Poster:"https://m.media-amazon.com/images/M/MV5BMTg2MjkwMTM0NF5BMl5BanBnXkFtZTcwMzc4NDg2NQ@@._V1_SX300.jpg"}
+
 ]
