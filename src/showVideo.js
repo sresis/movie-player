@@ -2,6 +2,7 @@ import Filter from './Filter';
 import { movieData } from './movieData';
 import React, {useState} from 'react';
 import ReactPlayer from 'react-player'
+import { Slider, Direction, PlayerIcon } from 'react-player-controls'
 
 
 import {
@@ -18,7 +19,7 @@ import {
 
 export default function ShowVideo(props) {
     const history = useHistory();
-    // get movie ID
+    // get movie ID. this will be used for dynamic videos in future
     const {id} = useParams();
     const temp = []
     // search for movie's details
@@ -28,17 +29,19 @@ export default function ShowVideo(props) {
             temp.push(allMovies[i].URL);
         }
     
+    
     }
     
     return (
-        <div>
-            <ReactPlayer url={temp} 
-                config={{
-                    youtube: {
-                    playerVars: { showinfo: 0 }
-                    }
-                }
-            }> 
+        <div id="player">
+ 
+            <ReactPlayer 
+                playing={true} 
+                light={true}
+                controls={true}
+                url="https://media.w3.org/2010/05/sintel/trailer_hd.mp4">
+                
+                
             </ReactPlayer>
             <button onClick={()=>{history.push(`/`)}}>Return</button>
 

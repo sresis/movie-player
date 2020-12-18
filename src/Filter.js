@@ -1,10 +1,10 @@
 import { movieData } from './movieData';
 import './App.css';
 import React, {useState} from 'react';
-import {Card, } from 'react-bootstrap';
+import {Card,Col } from 'react-bootstrap';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import ShowVideo from './showVideo';
+import { Slider, Input } from '@material-ui/core/';
 import {
     BrowserRouter as Router,
     Switch,
@@ -41,35 +41,57 @@ export default function Filter(props) {
     const titles = []
     // copy of list to store list before sorting
     var movieList = [...movieData]
+
+    // track price range selection. default to showing 1960-2020
+    const [range, setRange] = React.useState([1960, 2020]);
     const history = useHistory();
+
+    // sets updated years to filter on based on user input
+    const handleYearChange = (evt, newValue) => {
+        setRange(newValue);
+    }
     const showMovies = (evt) => {
         evt.preventDefault();
         for (const movie of movieList) {
-            titles.push(
+            if (movie.Year >= range[0] && movie.Year <= range[1]) {
+                titles.push(
 
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={movie.Poster}/>
-                    <Card.Body>
-                        <Card.Title>{movie.Title}</Card.Title>
-                        <Card.Text>
-                        Year: {movie.Year}
-                        <button onClick={()=>{history.push(`/show-video/${movie.imdbID}`)}}>Show Video</button>
-                        </Card.Text>
-                    </Card.Body>
-                    </Card>
-            )
+                    <Card style={{ width: '18rem' }} className ="customCard">
+                        <Card.Img style={{ width: "75%"}} variant="top" src={movie.Poster}/>
+                        <Card.Body >
+                            <Card.Title>{movie.Title}</Card.Title>
+                            <Card.Text>
+                            Year: {movie.Year}
+                                <div>
+                                    <button onClick={()=>{history.push(`/show-video/${movie.imdbID}`)}}>Show Video</button>
+                                </div>
+                            </Card.Text>
+                        </Card.Body>
+                        </Card>
+                )
+            }         
           }
     setMovieNames(titles);
     }
 
     return (
         <React.Fragment>
-          
-
-
+            <div id="filter-container">
+                <div>Filter by Year</div>
+            <Slider
+                id="slider"
+                value={range}
+                onChange={handleYearChange}
+                valueLabelDisplay="auto"
+                aria-labelledby="range-slider"
+                min={1960}
+                max={2020}
+                width="50%"
+                        />
             <div>
-            <button id="show-but" onClick={showMovies}>Show Movies</button>
-            <Carousel responsive={responsive}>
+                <button id="show-but" onClick={showMovies}>Show Movies</button>
+            </div>
+            <Carousel id="customCaro" responsive={responsive}>
                 {movieNames}
             </Carousel>
         </div>

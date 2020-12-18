@@ -1,11 +1,13 @@
 .App {
   text-align: center;
+  font-family: 'Montserrat','Karla','Quicksand', 'Calibri';
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none; 
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -14,13 +16,14 @@
 }
 
 .App-header {
+  font-family: 'Gochi Hand';
   background-color: #282c34;
-  min-height: 100px;
+  min-height: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(18px + 2vmin);
   color: white;
 }
 
@@ -107,10 +110,38 @@ button{
   margin-top: 10px;
   border-radius: 5px; /* Adds curve to border corners */
   padding: 3px;
+  margin-bottom: 50px;
+  font-family: 'Montserrat','Karla','Quicksand', 'Calibri';
 }
 button:hover {
   background-color: #4C4B4B;
 
 }
 
-button:focus {outline:0;}
+button:focus {
+  outline:0;
+}
+#player {
+  display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 100px;
+  
+}
+/* The slider itself */
+#slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 50%; /* Full-width */
+  height: 5px; /* Specified height */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+#customCaro {
+  margin-top: 40px;
+}
+div {
+  margin-top: 5px;
+}

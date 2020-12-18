@@ -11,7 +11,7 @@ export const movieData = [
     Poster:"https://m.media-amazon.com/images/M/MV5BOTQ5NDI3MTI4MF5BMl5BanBnXkFtZTgwNDQ4ODE5MDE@._V1_SX300.jpg"},
     {Title:"Sleeping with Other People",Year:"2015","imdbID":"tt3165612",Type:"movie",
     Poster:"https://m.media-amazon.com/images/M/MV5BMTUyMzQwNjEyNV5BMl5BanBnXkFtZTgwMzYwMzgwNjE@._V1_SX300.jpg"},
-    {Title:"The Tomorrow People",Year:"2013–2014","imdbID":"tt2660734",Type:"series",
+    {Title:"The Tomorrow People",Year:"2014","imdbID":"tt2660734",Type:"series",
     Poster:"https://m.media-amazon.com/images/M/MV5BMjEyMDA4NjY0Nl5BMl5BanBnXkFtZTgwMDgzNDIxMDE@._V1_SX300.jpg"},
     {Title:"24 Hour Party People",Year:"2002","imdbID":"tt0274309",Type:"movie",
     Poster:"https://m.media-amazon.com/images/M/MV5BYTcyYzMyZGUtOGExYi00ZTljLWE3NDEtMGQyYTZiNmIzMzRiXkEyXkFqcGdeQXVyNzQ5MzY0NjM@._V1_SX300.jpg"},
