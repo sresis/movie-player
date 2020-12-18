@@ -50,12 +50,15 @@ function App(props) {
     <div className="App">
        
       <header className="App-header">
-        Movie Player
+        Moviely 🍿
       </header>
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <>
         <GlobalStyles />
-        <button onClick={toggleTheme}>{theme} mode</button>
+        <label class="switch">
+          <input id="toggle-but" type="checkbox" onClick={toggleTheme}></input>
+          <span class="slider round"></span>
+      </label>
         <footer>
         </footer>
       </>

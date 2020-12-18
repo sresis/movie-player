@@ -68,7 +68,7 @@ export default function Filter(props) {
 
 
             <div>
-            <button onClick={showMovies}>Show Movies</button>
+            <button id="show-but" onClick={showMovies}>Show Movies</button>
             <Carousel responsive={responsive}>
                 {movieNames}
             </Carousel>
