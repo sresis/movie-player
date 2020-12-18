@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import {Card, } from 'react-bootstrap';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import showVideo from './showVideo';
+import ShowVideo from './showVideo';
 import {
     BrowserRouter as Router,
     Switch,
@@ -36,7 +36,7 @@ const responsive = {
     }
   };
 
-export default function Filter() {
+export default function Filter(props) {
     const [movieNames, setMovieNames] = useState([])
     const titles = []
     // copy of list to store list before sorting
@@ -53,29 +53,22 @@ export default function Filter() {
                         <Card.Title>{movie.Title}</Card.Title>
                         <Card.Text>
                         Year: {movie.Year}
-                        <button onClick={()=>window.location.href="/showVideo"}>Show Video</button>
+                        <button onClick={()=>{history.push(`/show-video/${movie.imdbID}`)}}>Show Video</button>
                         </Card.Text>
                     </Card.Body>
                     </Card>
             )
           }
-    console.log(movieList);
     setMovieNames(titles);
     }
-    
+
     return (
         <React.Fragment>
-            <Router>
-				<Switch>
-				<Route path="/showVideo" component={showVideo}>
-					<showVideo />
-				</Route>
-                </Switch>
-            </Router>
+          
 
 
             <div>
-            <button onClick={showMovies}>xx</button>
+            <button onClick={showMovies}>Show Movies</button>
             <Carousel responsive={responsive}>
                 {movieNames}
             </Carousel>

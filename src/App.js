@@ -2,11 +2,13 @@
 import logo from './logo.svg';
 import './App.css';
 import Filter from './Filter';
+import ShowVideo from './showVideo';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 
 
@@ -15,8 +17,20 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './themes';
 import { GlobalStyles } from './globalStyle';
 
+function Homepage() {
 
-function App() {
+  return (
+
+    <div>
+    <Filter />
+    
+    </div>
+
+  )
+
+
+}
+function App(props) {
   const [theme, setTheme] = useState('light');
 
   // The function that toggles between themes
@@ -34,25 +48,31 @@ function App() {
 
   return (
     <div className="App">
+       
       <header className="App-header">
         Movie Player
       </header>
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <>
+        <GlobalStyles />
+        <button onClick={toggleTheme}>{theme} mode</button>
+        <footer>
+        </footer>
+      </>
+    </ThemeProvider>
+    <Router>
+    <Switch>
+      <Route path="/filter" component={Filter} />
+      <Route path="/show-video/:id" component={ShowVideo} />
+      <Route path="/" exact component={Homepage} />
+      <Redirect to='/' />
+    </Switch>
 
-        <div>
-        <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-          <>
-            <GlobalStyles />
-            <button onClick={toggleTheme}>{theme} mode</button>
-            <footer>
-            </footer>
-          </>
-        </ThemeProvider>
-          <Filter />
-          <iframe width="420" height="315" title="movie" src="https://www.youtube.com/embed/re5veV2F7eY">
-          </iframe>
-          
-        </div>
-       
+
+    </Router>
+    
+
+        
     
 
         
