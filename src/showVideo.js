@@ -34,20 +34,13 @@ export default function ShowVideo(props) {
     
     return (
         <div id="player">
- 
             <ReactPlayer 
                 playing={true} 
                 light={true}
                 controls={true}
                 url="https://media.w3.org/2010/05/sintel/trailer_hd.mp4">
-                
-                
             </ReactPlayer>
             <button onClick={()=>{history.push(`/`)}}>Return</button>
-
-            
-
-
         </div>
         
     )
