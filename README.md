@@ -14,10 +14,13 @@ Moviely is a web app that enables users to browse, filter and play movies.
 ```bash
 git clone https://github.com/sresis/movie-player.git
 ```
+Next steps are in the project directory -- 
+
 * Install requirements
 ```bash
-pip3 install -r requirements.txt
+npm install
 ```
+
 
 * Run the app in development mode
 ```bash
